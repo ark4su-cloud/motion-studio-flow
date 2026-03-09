@@ -57,6 +57,7 @@ const Portfolio = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer"
             >
               <div className="aspect-[3/2] overflow-hidden">
