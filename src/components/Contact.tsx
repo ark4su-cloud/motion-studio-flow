@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Send, Mail, MessageCircle } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -28,7 +28,7 @@ const Contact = () => {
         >
           <a
             href="mailto:contact@motionstudio.md"
-            className="animated-stroke-btn rounded-full px-8 py-3.5 text-base font-medium text-foreground hover:text-primary-foreground transition-colors flex items-center gap-2"
+            className="animated-stroke-btn gradient-btn rounded-full px-8 py-3.5 text-base font-medium text-primary-foreground transition-colors flex items-center gap-2"
           >
             <Mail size={18} />
             Trimite Email
@@ -37,7 +37,7 @@ const Contact = () => {
             href="https://www.fiverr.com/s/BR4ZKDz"
             target="_blank"
             rel="noopener noreferrer"
-            className="glass-effect rounded-full px-8 py-3.5 text-base font-medium text-secondary-foreground hover:text-foreground transition-colors flex items-center gap-2"
+            className="glass-effect rounded-full px-8 py-3.5 text-base font-medium text-secondary-foreground hover:text-foreground transition-all duration-300 flex items-center gap-2"
           >
             <MessageCircle size={16} />
             Fiverr

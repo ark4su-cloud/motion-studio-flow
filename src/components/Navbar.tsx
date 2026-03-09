@@ -32,7 +32,7 @@ const Navbar = () => {
           ))}
           <a
             href="#contact"
-            className="animated-stroke-btn rounded-full px-5 py-2 text-sm font-medium text-foreground hover:text-primary-foreground transition-colors"
+            className="animated-stroke-btn gradient-btn rounded-full px-5 py-2 text-sm font-medium text-primary-foreground transition-colors"
           >
             Comandă Acum
           </a>
@@ -70,7 +70,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="animated-stroke-btn rounded-full px-5 py-2.5 text-sm font-medium text-foreground text-center"
+                className="animated-stroke-btn gradient-btn rounded-full px-5 py-2.5 text-sm font-medium text-primary-foreground text-center"
               >
                 Comandă Acum
               </a>

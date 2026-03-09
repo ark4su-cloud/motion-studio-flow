@@ -37,11 +37,16 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
               className="glass-effect rounded-2xl p-6 group hover:border-primary/20 transition-all duration-500"
             >
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <motion.div
+                whileHover={{ rotate: [0, -10, 10, 0] }}
+                transition={{ duration: 0.5 }}
+                className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+              >
                 <s.icon size={20} className="text-primary" />
-              </div>
+              </motion.div>
               <h3 className="font-display text-base font-semibold text-foreground mb-2">{s.title}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </motion.div>
