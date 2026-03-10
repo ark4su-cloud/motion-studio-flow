@@ -36,7 +36,7 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section id="portofoliu" className="relative py-32 noise-overlay">
+    <section id="portofoliu" className="relative py-32 z-10">
       <div className="relative z-10 container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
