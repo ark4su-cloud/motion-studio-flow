@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
 const blobs = [
-  { className: "top-[-10%] left-[-5%] w-[500px] h-[500px] bg-[hsl(80,30%,15%)]", dur: 30, dx: 30, dy: 20 },
-  { className: "top-[30%] right-[-10%] w-[400px] h-[400px] bg-[hsl(65,25%,12%)]", dur: 35, dx: -25, dy: 30 },
-  { className: "bottom-[5%] left-[15%] w-[350px] h-[350px] bg-[hsl(90,20%,10%)]", dur: 28, dx: 20, dy: -25 },
+  { className: "top-[-10%] left-[-5%] w-[500px] h-[500px] bg-[hsl(80,50%,35%)]", dur: 12, dx: 60, dy: 50 },
+  { className: "top-[30%] right-[-10%] w-[400px] h-[400px] bg-[hsl(65,45%,32%)]", dur: 14, dx: -55, dy: 60 },
+  { className: "bottom-[5%] left-[15%] w-[350px] h-[350px] bg-[hsl(90,40%,30%)]", dur: 10, dx: 45, dy: -50 },
 ];
 
 const BackgroundEffects = () => (
@@ -14,7 +14,7 @@ const BackgroundEffects = () => (
         animate={{
           x: [0, b.dx, -b.dx * 0.7, 0],
           y: [0, b.dy, -b.dy * 0.6, 0],
-          scale: [1, 1.1, 0.95, 1],
+          scale: [1, 1.3, 0.8, 1],
         }}
         transition={{ duration: b.dur, repeat: Infinity, ease: "easeInOut" }}
         className={`absolute rounded-full blur-[100px] opacity-50 ${b.className}`}

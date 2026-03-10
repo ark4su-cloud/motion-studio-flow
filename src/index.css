@@ -65,14 +65,19 @@
     @apply bg-background text-foreground font-body antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
   }
 }
 
 @layer utilities {
   .glass-effect {
-    background: var(--glass-bg);
+    background: hsla(80, 15%, 15%, 0.1);
     backdrop-filter: blur(40px) saturate(1.8) brightness(1.1);
     -webkit-backdrop-filter: blur(40px) saturate(1.8) brightness(1.1);
     border: 1px solid var(--glass-border);
@@ -80,7 +85,7 @@
   }
 
   .glass-card {
-    background: hsla(80, 15%, 12%, 0.4);
+    background: hsla(80, 15%, 12%, 0.1);
     backdrop-filter: blur(50px) saturate(2) brightness(1.05);
     -webkit-backdrop-filter: blur(50px) saturate(2) brightness(1.05);
     border: 1px solid hsla(60, 30%, 70%, 0.08);
@@ -98,11 +103,32 @@
   }
 
   .gradient-text-glow {
-    background: linear-gradient(135deg, hsl(45, 85%, 65%), hsl(75, 75%, 55%), hsl(90, 65%, 50%));
+    background: linear-gradient(to right,
+        hsl(35, 95%, 55%),
+        hsl(65, 80%, 55%),
+        hsl(90, 65%, 50%),
+        hsl(65, 80%, 55%),
+        hsl(35, 95%, 55%)
+        /* End color must exactly match start color for perfect loop */
+      );
+    background-size: 200% auto;
+    color: transparent;
+    /* better compatibility */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     filter: drop-shadow(0 0 12px hsla(65, 80%, 55%, 0.35));
+    animation: gradient-flow 3s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% center;
+    }
+
+    100% {
+      background-position: -200% center;
+    }
   }
 
   .gradient-btn {
@@ -143,12 +169,23 @@
 .stroke-on-hover::before {
   content: '';
   position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  padding: 2px;
-  background: conic-gradient(from var(--angle), hsl(45, 85%, 55%), hsl(75, 70%, 50%), hsl(90, 65%, 45%), transparent 40%, transparent 80%, hsl(45, 85%, 55%));
+  inset: -3px; /* Ensure this is slightly larger to avoid clipping */
+  border-radius: 17px; /* Explicit match for Tailwind rounded-2xl (1rem) + inset */
+  padding: 3px; /* Thickened the stroke */
+  
+  /* Perfect full color loop matching the ArtioMotion title gradient */
+  background: conic-gradient(from var(--angle), 
+    hsl(35, 95%, 55%), 
+    hsl(65, 80%, 55%), 
+    hsl(90, 65%, 50%), 
+    hsl(65, 80%, 55%), 
+    hsl(35, 95%, 55%) /* Ends where it started = perfect loop */
+  );
+  
+  /* Critical mask properties */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask-composite: exclude;
   z-index: -1;
 }
@@ -189,6 +226,12 @@
   animation: stroke-rotate 4s linear infinite;
   z-index: -1;
   filter: drop-shadow(0 0 8px hsla(65, 80%, 55%, 0.3));
+}
+
+@keyframes stroke-rotate {
+  to {
+    --angle: 360deg;
+  }
 }
 
 @keyframes stroke-rotate {
