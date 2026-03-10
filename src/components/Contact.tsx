@@ -3,7 +3,7 @@ import { Mail, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="relative py-32 noise-overlay">
+    <section id="contact" className="relative py-32 z-10">
       <div className="relative z-10 container mx-auto px-6 max-w-2xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

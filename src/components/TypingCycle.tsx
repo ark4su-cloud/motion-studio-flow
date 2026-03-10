@@ -55,7 +55,7 @@ const TypingCycle = () => {
           initial={{ opacity: 0.7, y: 4, filter: "blur(2px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.15 }}
-          className="gradient-text"
+          className="animated-gradient-text"
         >
           {displayText}
         </motion.span>

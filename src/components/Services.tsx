@@ -14,10 +14,20 @@ const services = [
   { icon: FileCode, title: "Lottie Animation", desc: "Animații .json optimizate pentru web și aplicații mobile." },
 ];
 
+const cardVariants = {
+  rest: { scale: 1, y: 0 },
+  hover: { scale: 1.05, y: -8 },
+};
+
+const siblingVariants = {
+  rest: { scale: 1 },
+  shrink: { scale: 0.97 },
+};
+
 const Services = () => {
   return (
-    <section id="servicii" className="relative py-32 noise-overlay">
-      <div className="relative z-10 container mx-auto px-6">
+    <section id="servicii" className="relative py-32 z-10">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -29,21 +39,23 @@ const Services = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold gradient-text">Servicii</h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 group/grid">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="glass-effect rounded-2xl p-6 group hover:border-primary/20 transition-all duration-500"
+              whileHover="hover"
+              variants={cardVariants}
+              className="glass-card rounded-2xl p-6 cursor-default transition-all duration-500
+                         group-hover/grid:[&:not(:hover)]:scale-[0.97] group-hover/grid:[&:not(:hover)]:opacity-70"
             >
               <motion.div
                 whileHover={{ rotate: [0, -10, 10, 0] }}
                 transition={{ duration: 0.5 }}
-                className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors"
+                className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4"
               >
                 <s.icon size={20} className="text-primary" />
               </motion.div>
