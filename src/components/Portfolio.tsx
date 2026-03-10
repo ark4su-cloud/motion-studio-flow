@@ -36,7 +36,7 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section id="portofoliu" className="relative py-32 noise-overlay">
+    <section id="portofoliu" className="relative py-32 z-10">
       <div className="relative z-10 container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -58,7 +58,7 @@ const Portfolio = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative overflow-hidden rounded-2xl glass-effect cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl glass-card cursor-pointer"
             >
               <div className="aspect-[3/2] overflow-hidden">
                 <img

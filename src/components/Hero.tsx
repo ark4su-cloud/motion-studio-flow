@@ -6,25 +6,8 @@ const Hero = () => {
   return (
     <section
       id="acasa"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay"
-      style={{ background: "var(--gradient-hero)" }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden z-10"
     >
-      {/* Floating gradient orbs with continuous motion */}
-      <motion.div
-        animate={{ x: [0, 30, -20, 0], y: [0, -20, 15, 0], scale: [1, 1.1, 0.95, 1] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/10 blur-[120px]"
-      />
-      <motion.div
-        animate={{ x: [0, -25, 20, 0], y: [0, 20, -25, 0], scale: [1, 0.9, 1.1, 1] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-accent/10 blur-[100px]"
-      />
-      <motion.div
-        animate={{ x: [0, 15, -15, 0], y: [0, -30, 10, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/2 right-1/3 w-64 h-64 rounded-full bg-primary/5 blur-[80px]"
-      />
 
       <div className="relative z-10 container mx-auto px-6 text-center">
         <motion.div
